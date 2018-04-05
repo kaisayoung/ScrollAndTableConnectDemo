@@ -14,7 +14,7 @@
 
 @class STBottomView;
 
-@protocol STBottomTableViewDataSource <NSObject>
+@protocol STBottomViewDataSource <NSObject>
 
 - (UIView *)bottomTableHeaderView;
 
@@ -26,8 +26,6 @@
 
 @property (nonatomic, assign, readonly) CGFloat fullContentHeight;
 
-@property (nonatomic, weak) id<STBottomTableViewDataSource>dataSource;
-
-- (void)setHeaderViewIfNeeded;
+- (instancetype)initWithFrame:(CGRect)frame dataSource:(id<STBottomViewDataSource>)dataSource;
 
 @end

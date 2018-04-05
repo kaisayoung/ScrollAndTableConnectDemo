@@ -13,13 +13,16 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, weak) id<STBottomViewDataSource> dataSource;
+
 @end
 
 @implementation STBottomView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame dataSource:(id<STBottomViewDataSource>)dataSource {
     self = [super initWithFrame:frame];
     if (self) {
+        self.dataSource = dataSource;
         [self initTableView];
     }
     return self;
@@ -27,6 +30,7 @@
 
 - (void)initTableView {
     [self addSubview:self.tableView];
+    [self setHeaderViewIfNeeded];
 }
 
 - (UIScrollView *)scrollView {

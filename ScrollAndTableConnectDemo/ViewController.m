@@ -12,7 +12,7 @@
 #import "STBottomView.h"
 #import "UIView+STFrameKit.h"
 
-@interface ViewController ()<UIScrollViewDelegate,STBottomTableViewDataSource>
+@interface ViewController ()<UIScrollViewDelegate,STBottomViewDataSource>
 
 @property (nonatomic, strong) UIScrollView *containerScrollView;
 
@@ -38,7 +38,6 @@
     [self.view addSubview:self.containerScrollView];
     [self.containerScrollView addSubview:self.topView];
     [self.containerScrollView addSubview:self.bottomView];
-    [self.bottomView setHeaderViewIfNeeded];
     self.topView.scrollView.scrollsToTop = NO;
     self.topView.scrollView.scrollEnabled = NO;
     self.bottomView.scrollView.scrollsToTop = NO;
@@ -81,7 +80,7 @@
     }
 }
 
-#pragma mark - STBottomTableViewDataSource
+#pragma mark - STBottomViewDataSource
 
 - (UIView *)bottomTableHeaderView {
     return self.middleView;
@@ -115,8 +114,7 @@
 
 - (STBottomView *)bottomView {
     if (!_bottomView) {
-        _bottomView = [[STBottomView alloc] initWithFrame:self.view.bounds];
-        _bottomView.dataSource = self;
+        _bottomView = [[STBottomView alloc] initWithFrame:self.view.bounds dataSource:self];
         _bottomView.backgroundColor = [UIColor greenColor];
     }
     return _bottomView;
