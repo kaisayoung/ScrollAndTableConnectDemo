@@ -1,0 +1,15 @@
+PODS:
+  - KVOController (1.2.0)
+  - Reveal-iOS-SDK (1.6.2)
+
+DEPENDENCIES:
+  - KVOController
+  - Reveal-iOS-SDK
+
+SPEC CHECKSUMS:
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
+
+PODFILE CHECKSUM: 298d4f15c9df5264765c266ba54276cac3cff3fd
+
+COCOAPODS: 1.4.0

@@ -1,0 +1,6 @@
+framework module Pods_ScrollAndTableConnectDemo {
+  umbrella header "Pods-ScrollAndTableConnectDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
